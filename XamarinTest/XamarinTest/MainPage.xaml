@@ -1,0 +1,25 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+													xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+													xmlns:local="clr-namespace:XamarinTest"
+													x:Class="XamarinTest.MainPage">
+
+	<StackLayout Spacing="15" VerticalOptions="Center" Padding="20">
+		
+		
+		
+		<!--<Entry x:Name="email" Placeholder="Email" PlaceholderColor="LightGray" Keyboard="Email"/>
+		<Entry x:Name="password" IsPassword="true" Placeholder="Password" PlaceholderColor="LightGray"/>
+		
+		<Button Text="Sign In" Clicked="Button_Clicked" BorderRadius="20" BackgroundColor="Aqua" TextColor="White"/>
+		<Button Text="Sign Up"/>-->
+
+
+		<Label Text="Enter a Phoneword:" FontSize="Large"/>
+		<Entry x:Name="phoneword" Text="1-855-XAMARIN"/>
+		<Button Text="Translate" x:Name="trabB" Clicked="trabB_Clicked" BackgroundColor="#1976D2"/>
+		<Button Text="Try to Call" IsEnabled="False" x:Name="callB" Clicked="callB_Clicked" BackgroundColor="#1976D2"/>
+		
+	</StackLayout>
+
+</ContentPage>
