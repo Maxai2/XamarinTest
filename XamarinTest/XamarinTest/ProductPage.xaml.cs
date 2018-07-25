@@ -12,9 +12,14 @@ namespace XamarinTest
 	[XamlCompilation(XamlCompilationOptions.Compile)]
 	public partial class ProductPage : ContentPage
 	{
-		public ProductPage ()
+        public Product pro { get; set; }
+
+        public ProductPage (Product product)
 		{
-			InitializeComponent ();
+            pro = product;
+			InitializeComponent();
+
+            BindingContext = this;
 		}
 	}
 }

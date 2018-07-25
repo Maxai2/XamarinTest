@@ -47,11 +47,14 @@ namespace XamarinTest
             Products.Add(pro1);
             Products.Add(pro2);
             Products.Add(pro3);
+            Products.Add(pro3);
+            Products.Add(pro3);
         }
 
         private void TapGestureRecognizer_Tapped(object sender, EventArgs e)
         {
-            this.Navigation.PushAsync(new ProductPage());
+            var item = (sender as Frame).BindingContext as Product;
+            this.Navigation.PushAsync(new ProductPage(item));
         }
     }
 }
