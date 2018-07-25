@@ -1,0 +1,36 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="XamarinTest.Goods">
+	<ContentPage.Content>
+		<ListView ItemsSource="{Binding Products}" HasUnevenRows="True">
+			<ListView.ItemTemplate>
+				<DataTemplate>
+					<ViewCell>
+						<Frame BorderColor="Black" CornerRadius="5" Margin="5" HeightRequest="100">
+							<Frame.GestureRecognizers>
+								<TapGestureRecognizer Tapped="TapGestureRecognizer_Tapped"/>
+							</Frame.GestureRecognizers>
+							<Grid>
+								
+								<Grid.ColumnDefinitions>
+									<ColumnDefinition/>
+									<ColumnDefinition/>
+								</Grid.ColumnDefinitions>
+
+								<Image Grid.Column="0" Source="{Binding Image}"/>
+								
+								<StackLayout Grid.Column="1">
+									<Label Text="{Binding Title}"/>
+									<Label Text="{Binding Price}"/>
+									<Label Text="{Binding Description}"/>
+								</StackLayout>
+								
+							</Grid>
+						</Frame>
+					</ViewCell>
+				</DataTemplate>
+			</ListView.ItemTemplate>
+		</ListView>
+	</ContentPage.Content>
+</ContentPage>
