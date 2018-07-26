@@ -21,5 +21,11 @@ namespace XamarinTest
 
             BindingContext = this;
 		}
-	}
+
+        private void BuyB_Clicked(object sender, EventArgs e)
+        {
+            MessagingCenter.Send(this, "bought", pro);
+            this.Navigation.PopModalAsync();
+        }
+    }
 }

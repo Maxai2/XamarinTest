@@ -33,11 +33,7 @@ namespace XamarinTest
             {
                 MenuItems = new ObservableCollection<MainPageMenuItem>(new[]
                 {
-                    new MainPageMenuItem { Id = 0, Title = "Page 1" },
-                    new MainPageMenuItem { Id = 1, Title = "Page 2" },
-                    new MainPageMenuItem { Id = 2, Title = "Page 3" },
-                    new MainPageMenuItem { Id = 3, Title = "Page 4" },
-                    new MainPageMenuItem { Id = 4, Title = "Page 5" },
+                    new MainPageMenuItem { Id = 0, Title = "Goods", TargetType=typeof(Goods) }
                 });
             }
             
@@ -51,6 +47,14 @@ namespace XamarinTest
                 PropertyChanged.Invoke(this, new PropertyChangedEventArgs(propertyName));
             }
             #endregion
+        }
+
+        private void signOutB_Clicked(object sender, EventArgs e)
+        {
+            //Application.Current.Properties.Remove("token");
+            Settings.Token = null;
+
+            Application.Current.MainPage = new LogInPage();
         }
     }
 }

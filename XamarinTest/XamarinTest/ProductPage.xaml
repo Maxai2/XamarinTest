@@ -5,6 +5,7 @@
 	<ContentPage.Content>
 		<StackLayout>
 			<Image Source="{Binding pro.Image}" HeightRequest="200"/>
+			<Button Text="Buy" x:Name="BuyB" Clicked="BuyB_Clicked"/>
 		</StackLayout>
 	</ContentPage.Content>
 </ContentPage>

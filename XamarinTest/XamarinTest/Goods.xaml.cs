@@ -20,6 +20,9 @@ namespace XamarinTest
 			InitializeComponent ();
             BindingContext = this;
 
+            //var repo = new ProductsRepository("products.db");
+            //repo.GetAll().ToList().ForEach(i => this.Products.Add(i));
+
             var pro1 = new Product()
             {
                 Title = "Black",
@@ -47,14 +50,19 @@ namespace XamarinTest
             Products.Add(pro1);
             Products.Add(pro2);
             Products.Add(pro3);
-            Products.Add(pro3);
-            Products.Add(pro3);
+            Products.Add(pro2);
+            Products.Add(pro1);
+
+            MessagingCenter.Subscribe<ProductPage, Product>(this, "bought", (sender, p) =>
+            {
+                this.Products.Remove(p);
+            });
         }
 
         private void TapGestureRecognizer_Tapped(object sender, EventArgs e)
         {
             var item = (sender as Frame).BindingContext as Product;
-            this.Navigation.PushAsync(new ProductPage(item));
+            this.Navigation.PushModalAsync(new ProductPage(item));
         }
     }
 }

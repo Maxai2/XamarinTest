@@ -21,7 +21,10 @@ namespace XamarinTest
             await Task.Delay(2000);
             blackScreen.IsVisible = false;
 
-            App.Current.MainPage = new MainPage();
+            var token = Guid.NewGuid().ToString();
+            Settings.Token = token;
+
+            Application.Current.MainPage = new MainPage();
         }
 
         private void SUButton_Clicked(object sender, EventArgs e)

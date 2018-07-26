@@ -13,6 +13,19 @@
 			<Entry x:Name="password" Placeholder="Password" PlaceholderColor="LightGray" IsPassword="true"/>
 
 			<Button x:Name="SIButton" Clicked="SIButton_Clicked" Text="Sign In" TextColor="White" BackgroundColor="Coral"/>
+			<Grid>
+				<Grid.ColumnDefinitions>
+					<ColumnDefinition Width="*"/>
+					<ColumnDefinition Width="Auto"/>
+					<ColumnDefinition Width="*"/>
+				</Grid.ColumnDefinitions>
+
+				<Label Grid.Column="0" VerticalOptions="Center" HeightRequest="1" BackgroundColor="Gray"/>
+				<Label Grid.Column="1" VerticalOptions="Center" Text="OR" TextColor="Gray"/>
+				<Label Grid.Column="2" VerticalOptions="Center" HeightRequest="1" BackgroundColor="Gray"/>
+
+			</Grid>
+
 			<Button x:Name="SUButton" Clicked="SUButton_Clicked" Text="Sign Up" TextColor="White" BackgroundColor="Coral"/>
 
 			<!--<Entry x:Name="email" Placeholder="Email" PlaceholderColor="LightGray" Keyboard="Email"/>

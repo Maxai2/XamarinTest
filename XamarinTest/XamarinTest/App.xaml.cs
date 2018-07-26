@@ -1,3 +1,4 @@
+using Plugin.Settings;
 using System;
 using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
@@ -11,7 +12,12 @@ namespace XamarinTest
 		{
 			InitializeComponent();
 
-			MainPage = new LogInPage();
+            //CrossSettings.Current.GetValueOrDefault("token", null); // install-package xam.plugins.settings
+
+            if (Settings.Token != null) // this.Properties.ContainsKey("token")
+                MainPage = new MainPage();
+            else
+			    MainPage = new LogInPage();
 		}
 
 		protected override void OnStart ()
